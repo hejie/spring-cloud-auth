@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="crm" packages="com.com.yh.log4j2">
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ABSOLUTE} [%style{%20t}{white}] %highlight{%5p} (%F:%L) - %m%n"/>
+        </Console>
+        <RollingRandomAccessFile name="rraf"
+                                 filePattern="info-%d{yyyy-MM-dd}.log"
+                                 fileName="info.log">
+            <PatternLayout>
+                <Pattern>%d %p [%t] - %m - (%F:%L)%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="error"
+                                 filePattern="error-%d{yyyy-MM-dd}.log"
+                                 fileName="error.log">
+            <PatternLayout>
+                <Pattern>%d %p [%t] - %m - (%F:%L)%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <!--文件日志-->
+            <AppenderRef ref="rraf" level="info"/>
+            <AppenderRef ref="error" level="error"/>
+        </Root>
+
+        <!--SQL log-->
+        <Logger name="druid.sql.DataSource" level="info"/>
+        <Logger name="druid.sql.Statement" level="debug"/>
+        <Logger name="druid.sql.Connection" level="info"/>
+        <Logger name="druid.sql.ResultSet" level="debug"/>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: web-server
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      discovery:
+        prefer-ip-address: true
+        health-check-path: ${server.context-path}/health
+        tags: management.context-path=${server.context-path}
+    config:
+      fail-fast: true
+      discovery:
+        service-id: config-center
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: ${spring.profiles.active}
+
+
+
+# 数据源配置
+datasource:
+ mysql:
+  url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/jeesite?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  username: root
+  password: 0
+  driverClassName: com.mysql.jdbc.Driver
+  generate-ddl: true
+  connection-init-sqls: set names utf8mb4;

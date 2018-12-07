@@ -1,0 +1,19 @@
+server:
+  port: 18006
+
+spring:
+  application:
+    name: config-center
+  profiles:
+    active: native                 # native 为本地配置
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      discovery:
+        prefer-ip-address: true
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+      fail-fast: true
