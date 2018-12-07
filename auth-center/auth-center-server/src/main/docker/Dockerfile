@@ -1,8 +1,9 @@
-FROM jre8
+FROM d.onedream.com/omd/jdk8:12121139
+
 VOLUME /tmp
-ADD auth-center-server-1.0-SNAPSHOT.jar app.jar
-ADD wait-for-it.sh /wait-for-it.sh
-RUN bash -c 'touch /app.jar'
-RUN chmod +x /wait-for-it.sh
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+
+ADD target/*.jar app.jar
+
+ENTRYPOINT exec java $JAVA_OPTS -jar app.jar $SPRING_BOOT_ARGS
+
 EXPOSE 18001
