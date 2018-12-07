@@ -1,7 +1,7 @@
 package com.yh.auth.token;
 
 import com.yh.auth.provider.IRedisService;
-import com.yh.hr.api.service.UserFeignClientService;
+import com.yh.api.service.UserFeignClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;

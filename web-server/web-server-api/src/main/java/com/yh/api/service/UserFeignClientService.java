@@ -1,8 +1,8 @@
-package com.yh.hr.api.service;
+package com.yh.api.service;
 
 
-import com.yh.hr.api.InterfaceService;
-import com.yh.hr.api.pojo.User;
+import com.yh.api.InterfaceService;
+import com.yh.api.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;

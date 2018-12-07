@@ -1,4 +1,4 @@
-package com.yh.hr.api.pojo;
+package com.yh.api.pojo;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
 package com.yh.auth.service;
 
 import com.yh.auth.provider.AuthoritiesEnum;
-import com.yh.hr.api.service.UserFeignClientService;
+import com.yh.api.service.UserFeignClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -20,7 +20,7 @@ public class CustomerUserService implements UserDetailsService {
 
     @Override
     public org.springframework.security.core.userdetails.User loadUserByUsername(String username) throws UsernameNotFoundException {
-        com.yh.hr.api.pojo.User user = userService.getUserByUserCode(username);
+        com.yh.api.pojo.User user = userService.getUserByUserCode(username);
         if (user != null) {
 //            String password = passwordEncoder().encode();
             User userInfo = new User(user.getUserCode(),
