@@ -1,6 +1,3 @@
-server:
-  name: web-server
-
 spring:
   application:
     name: web-server
