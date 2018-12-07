@@ -1,8 +1,8 @@
 package com.yh.hr.controller;
 
+import com.yh.common.utils.CookieUtil;
 import com.yh.hr.domain.WxUser;
 import com.yh.hr.service.UserService;
-import com.yh.common.utils.CookieUtil;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import org.apache.commons.lang3.StringUtils;
@@ -34,7 +34,7 @@ public class WxController {
     @Autowired
     private UserService userService;
 
-    @Value("${domain}")
+    @Value("${api.domain}")
     private String domain;
 
     /**

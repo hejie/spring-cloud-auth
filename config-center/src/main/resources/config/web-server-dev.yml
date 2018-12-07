@@ -1,2 +1,17 @@
 server:
   port: 18002
+
+#数据源配置
+datasource:
+ mysql:
+  url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/jeesite?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  username: root
+  password: 0
+  driverClassName: com.mysql.jdbc.Driver
+  generate-ddl: true
+  connection-init-sqls: set names utf8mb4;
+
+#OSS配置
+oss:
+ image:
+    url: https://omd-static.oss-cn-shanghai.aliyuncs.com/ajidou/hr/image/

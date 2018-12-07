@@ -1,7 +1,6 @@
 package com.yh.auth.service;
 
 import com.yh.auth.provider.AuthoritiesEnum;
-import com.yh.hr.api.service.UserRemoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -16,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class CustomerUserService implements UserDetailsService {
 
     @Autowired
-    private UserRemoteService userService;
+    private UserFeignClientService userService;
 
     @Override
     public org.springframework.security.core.userdetails.User loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -18,16 +18,11 @@ import redis.clients.jedis.JedisPoolConfig;
 @Configuration
 public class WxConfiguration {
 
-    @Value("${wx.appId.ajd}")
+    @Value("${wx.appId}")
     private String wxAppId;
 
-    @Value("${wx.appSecret.ajd}")
+    @Value("${wx.appSecret}")
     private String wxAppSecret;
-
-
-    @Value("${wx.token}")
-    private String wxToken;
-
 
     @Value("${spring.redis.host}")
     private String redisHost;
@@ -42,7 +37,6 @@ public class WxConfiguration {
         WxMpInMemoryConfigStorage config = new WxMpInRedisConfigStorage(jedisPool());
         config.setAppId(wxAppId); // 设置微信公众号的app_id
         config.setSecret(wxAppSecret); // 设置微信公众号的app corpSecret
-        config.setToken(wxToken); // 设置微信公众号的token
         config.setAesKey(""); // 设置微信公众号的EncodingAESKey
         WxMpService wxService = new WxMpServiceImpl();
         wxService.setWxMpConfigStorage(config);

@@ -1,3 +1,6 @@
+server:
+  name: web-server
+
 spring:
   application:
     name: web-server
@@ -17,15 +20,14 @@ spring:
       profile: ${spring.profiles.active}
       label: ${spring.profiles.active}
 
-
-
-
-# 数据源配置
-datasource:
- mysql:
-  url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/jeesite?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-  username: root
-  password: 0
-  driverClassName: com.mysql.jdbc.Driver
-  generate-ddl: true
-  connection-init-sqls: set names utf8mb4;
+#域名
+api:
+ domain: http://mpdev.baminute.com
+#微信
+wx:
+#正式
+# appId: wxee3f0a269d0a8d3d
+# appSecret: 244e1ee57d6f623a64d75f8ce793d4d7
+#测试
+ appId: wxc402911134d21ddb
+ appSecret: 9b0a6ddf934a5cd7e6b39d3d0f48ebe1

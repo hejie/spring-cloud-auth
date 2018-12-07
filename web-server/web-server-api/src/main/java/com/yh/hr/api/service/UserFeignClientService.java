@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Component
 @FeignClient(name = InterfaceService.SERVICE_NAME)
-public interface UserRemoteService {
-
+public interface UserFeignClientService {
 
     @RequestMapping(value = "/user/code/{userCode}", method = RequestMethod.GET)
     User getUserByUserCode(@PathVariable("userCode") String userCode);

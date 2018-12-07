@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.groupingBy;
 @Component
 public class FileTransform {
 
-    @Value("${file.oss.url}")
+    @Value("${oss.image.url}")
     private String oss_url;
 
 
