@@ -6,6 +6,6 @@ MAINTAINER onedream
 
 ADD target/*.jar app.jar
 
-EXPOSE 8089
+EXPOSE 18002
 
 ENTRYPOINT exec java $JAVA_OPTS -jar app.jar $SPRING_BOOT_ARGS
