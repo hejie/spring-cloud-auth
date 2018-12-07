@@ -15,3 +15,13 @@ datasource:
 oss:
  image:
     url: https://omd-static.oss-cn-shanghai.aliyuncs.com/ajidou/hr/image/
+
+#域名
+api:
+ domain: http://mpdev.baminute.com
+#微信
+wx:
+#正式
+#测试
+ appId: wxc402911134d21ddb
+ appSecret: 9b0a6ddf934a5cd7e6b39d3d0f48ebe1
