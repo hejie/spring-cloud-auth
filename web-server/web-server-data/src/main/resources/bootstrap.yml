@@ -9,8 +9,6 @@ spring:
       port: ${CONSUL_PORT:8500}
       discovery:
         prefer-ip-address: true
-        health-check-path: ${server.context-path}/health
-        tags: management.context-path=${server.context-path}
     config:
       fail-fast: true
       discovery:
@@ -18,6 +16,7 @@ spring:
         enabled: true
       profile: ${spring.profiles.active}
       label: ${spring.profiles.active}
+
 
 
 
