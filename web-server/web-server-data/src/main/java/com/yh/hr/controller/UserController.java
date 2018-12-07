@@ -10,6 +10,8 @@ import com.yh.hr.utils.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Nullable;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -33,5 +35,10 @@ public class UserController {
     @GetMapping("/code/{userCode}")
     public User getUserByUserCode(@PathVariable("userCode") String userCode) {
         return userService.findByUserCode(userCode);
+    }
+
+    @GetMapping("/updateUser")
+    void updateUser(@RequestParam("access_Token") String access_Token, @RequestParam("userCode") String userCode, @Nullable @RequestParam("openId") String openId) {
+        userService.update(access_Token, userCode, openId);
     }
 }

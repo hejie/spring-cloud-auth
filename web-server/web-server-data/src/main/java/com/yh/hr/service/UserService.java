@@ -186,10 +186,12 @@ public class UserService {
 
         User user = findByUserCode(userCode);
         WxUser wxUser = wxUserRepository.findByOpenId(openId);
-        user.setAvatar(wxUser.getAvatar());
-        user.setNickName(wxUser.getNickName());
-        user.setWxOpenid(openId);
-        userRepository.save(user);
+        if (wxUser != null) {
+            user.setAvatar(wxUser.getAvatar());
+            user.setNickName(wxUser.getNickName());
+            user.setWxOpenid(openId);
+            userRepository.save(user);
+        }
     }
 
 

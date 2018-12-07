@@ -17,5 +17,5 @@ public interface UserRemoteService {
     User getUserByUserCode(@PathVariable("userCode") String userCode);
 
     @GetMapping("/user/updateUser")
-    User updateUser(@RequestParam("access_Token") String access_Token, @RequestParam("userCode") String userCode, @RequestParam("openId") String openId);
+    void updateUser(@RequestParam("access_Token") String access_Token, @RequestParam("userCode") String userCode, @RequestParam("openId") String openId);
 }
