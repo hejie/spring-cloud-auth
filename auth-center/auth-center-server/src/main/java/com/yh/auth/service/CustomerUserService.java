@@ -1,6 +1,7 @@
 package com.yh.auth.service;
 
 import com.yh.auth.provider.AuthoritiesEnum;
+import com.yh.hr.api.service.UserFeignClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.AuthorityUtils;
