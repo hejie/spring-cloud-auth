@@ -8,7 +8,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 @SpringCloudApplication
 @EnableFeignClients("com.yh.api")
-@EnableAuthorizationServer
 public class AuthCenterApplication {
     public static void main(String[] args) {
         SpringApplication.run(AuthCenterApplication.class, args);
