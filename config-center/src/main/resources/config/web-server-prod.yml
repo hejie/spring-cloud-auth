@@ -1,0 +1,27 @@
+server:
+  port: 18002
+
+#数据源配置
+datasource:
+ mysql:
+  url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/jeesite?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  username: root
+  password: 0
+  driverClassName: com.mysql.jdbc.Driver
+  generate-ddl: true
+  connection-init-sqls: set names utf8mb4;
+
+#OSS配置
+oss:
+ image:
+    url: https://omd-static.oss-cn-shanghai.aliyuncs.com/ajidou/hr/image/
+
+#域名
+api:
+ domain: http://mpdev.baminute.com
+#微信
+wx:
+#正式
+#测试
+ appId: wxc402911134d21ddb
+ appSecret: 9b0a6ddf934a5cd7e6b39d3d0f48ebe1
